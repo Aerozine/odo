@@ -1,0 +1,23 @@
+mot->rdi  (addr du mot)
+i->rsi
+j->rdx
+tmp->rcx
+
+est_palindrome: i<-0
+                j<-0
+                rax<-0 (false)
+loop_j:         if(mot[j]!='\0') 
+                  j++
+                  jump loop_j
+                j--
+loop:           tmp<-mot[i] 
+                if(tmp!=mot[j])
+                  ret rax
+                i++
+                j--
+                if( j>i)
+                  jmp loop
+                rax<- 1 ( vrai)
+                ret rax
+                
+
