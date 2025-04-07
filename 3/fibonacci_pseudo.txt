@@ -1,0 +1,19 @@
+pseudo assembleur
+n->rdi
+c-> rax 
+b-> rsi
+a-> rdx
+i->rcx
+fibonacci: a<-0
+           b<-1
+           c<-0
+           i<-1
+loop :     c<-a // on utilise 32 bits par l'énoncé 
+           c+=b
+           a<-b
+           b<-c 
+           i++
+           if(i<n)
+             jump loop
+           ret c
+          
